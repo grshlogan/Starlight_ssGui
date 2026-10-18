@@ -1,0 +1,13 @@
+# Local research artifacts that are not redistributed
+learn/.downloads/
+learn/sources/
+learn/analysis/closed-tools/
+learn/analysis/extracted-key/
+learn/analysis/pyc-dumps/
+learn/analysis/tools/
+
+# Python and Windows local artifacts
+__pycache__/
+*.pyc
+Thumbs.db
+Desktop.ini
