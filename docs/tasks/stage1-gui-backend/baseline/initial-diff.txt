@@ -1,0 +1,6 @@
+# git diff --stat (main governance workspace, 2026-10-18)
+# command: git diff --stat
+# exit: 0
+ docs/decisions/AGENTS.md | 5 +++--
+ docs/identity/AGENTS.md  | 3 ++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)

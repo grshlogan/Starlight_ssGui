@@ -6,7 +6,21 @@
 
 | 稳定 ID | 显示名 | 主机/角色 | 独占写范围 | 工作流/配置 | 上下文 |
 | --- | --- | --- | --- | --- | --- |
-| 待指派 | 形如 `A001[Host]Role` | TBD | TBD(具体路径) | 待选择 | 创建后填写 |
+| `A001[PiDeck]DocArch Planner` | DocArch Planner | PiDeck / 文档架构与项目规划 | `docs/identity/A001.md`、规划/决策文档；不得写 GUI/backend 实现 | agent-dev-loop + Windows integrated governance | [A001.md](A001.md) |
+| `A002[PiDeck]Main Coordinator` | Main Coordinator | PiDeck / 任务治理协调 | `docs/identity/A002.md`、`docs/tasks/stage1-gui-backend/{packet-vN,state,coverage-ledger}.md`、`dispatch/`、`snapshots/`、`handoff/A002.md`；不得写 GUI/backend 实现、Coding receipt、Review verdict、acceptance record | `agent-dev-loop-v2`(PiDeck `manual` 启动 + file bridge)+ Windows integrated governance | [A002.md](A002.md) |
+| 待指派 | 形如 `Axxx[Host]Role` | TBD | TBD(具体路径) | 待选择 | 创建后填写 |
+
+## 当前指派(2026-10-18)
+
+| 身份 | 角色 | 会话 | 绑定任务/模块 | 状态 |
+| --- | --- | --- | --- | --- |
+| `A002[PiDeck]Main Coordinator` | Coordinator | `A002-session-01`(PiDeck,Windows 11 x64) | `stage1-gui-backend` / 治理侧,不认领模块 | 已启动,packet v1 已发布 |
+| `A003[PiDeck]Master Coding` | Master Coding | `A003-session-01`(已启动) | `stage1-gui-backend` / `backend` + `GUI`(`stream` 拓扑) | `REVIEW_READY`:receipt-v1 已交 |
+| `A003-R01` | Review（首轮） | 未启动,待 candidate-1 冻结后手动开启 | `stage1-gui-backend` / Review 家族 `stage1-gui-backend` | `PLANNED`:待 `R01` 派发 |
+
+2026-10-20 治理侧更新:`stage1-gui-backend` packet **v5** 已发布(`sha256:a62fd381…`,取代 v4),协议迁移到 `agent-dev-loop-v3`(Skill v3.0.0);A003 已将 ACK 与 checkpoint 迁到 `docs/handoff/A003.md`(保留路径,永不进候选);任务状态 `REVIEW_READY`。Review 身份按 v3 改为**按轮命名** `A003-R01`(不再使用 `A004`)。
+
+A002 与 A003 是**不同身份、不同会话、不同写范围**;Review 按轮命名为 `A003-Rxx`,必须是**独立新会话**。三者不得合并,不得在同一会话内跨越治理与实现/评审边界。
 
 - Coordinator/Coding/Review 角色由任务包指派并在此登记;架构/产品所有者与验收人由项目指派,可以是所有者本人。
 - Master Coding 拥有一个模块或任务流;Sub-Coding 继承一个 Master 并拥有一个 Block。其稳定 ID、模块/Block 范围、工作区与独占写范围必须与架构注册表和任务包一致。

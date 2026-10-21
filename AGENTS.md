@@ -21,7 +21,7 @@
 
 - 一个执行会话只有一个明确角色;同一工作区同一时间只有一个写者。并行实现需要隔离工作区与写范围。
 - 使用稳定身份 ID(`A001[Host]Role`;子任务 `A001-B01`)。显示名不是权限或宿主会话 ID。
-- 身份上下文位于 `docs/identity/<identity-id>.md`;登记与创建/维护规则见 `docs/identity/AGENTS.md`。当前尚未指派任何身份。
+- 身份上下文位于 `docs/identity/<identity-id>.md`;登记与创建/维护规则见 `docs/identity/AGENTS.md`。当前已指派:A001(DocArch Planner)、A002(Main Coordinator)、A003(Master Coding)。
 - Coordinator 管范围/排期/状态;Master Coding 管模块/任务流实现、拆分、集成、验收映射与移交;Sub-Coding 只管被分配的 Block;Coding 管实现与交付记录;Review 管独立评审;架构/产品所有者管契约决策;验收人消费最终结果。Master/Coding 不得作为同一候选的正式 Review。
 - 移交记录:目标、当前事实与证据、变更路径、验证、未覆盖范围、阻塞、下一动作;身份上下文约 1,000 行、硬上限 1,500 行,定期清理过时内容;不粘贴完整聊天。
 
@@ -57,6 +57,7 @@
 - 记录命令、cwd 别名、环境、退出码、脱敏输出与未覆盖范围;`verified` 声明不得超过证据。
 - 非平凡变更需独立 Review:Coding 停在 `review-ready`;Review 从冻结候选开始、新会话进行、只写自己的报告与证据,不修复实现。纯文档小改动是否走完整循环,由所有者/项目策略事先决定;不得声称未发生的独立 Review。
 - Review 结论:`PASS / FAIL / UNCERTAIN / BLOCKED`;PASS 绑定具体候选与标准版本,候选变化不能继承旧 PASS。
+- **Finding 消费纪律**(详见 [ADR-003](docs/decisions/ADR-003-finding-consumption-policy.md)):① `P3` 默认记 `waived`,不修、不入 AC,除非所有者显式提升并留下记录;② 每条 non-blocking 先答「不修则产品在哪条路径会坏」,答「无可达路径」即 `waived`,禁止直接写进 AC;③ 同一缺陷有多种修法时优先选**更少活动部件**(删除/移动/合并)而非新增守卫;④ spec 措辞模糊时回到 packet/ADR 修正,不让实现迎合其中一种解释。`waived`/`N/A` 计数恒为 0 是没做成本判断的信号。
 - 最终报告结构:**当前结论 → 变更路径 → 执行的验证与证据 → 未覆盖/跳过范围与风险 → 常驻入口与下一步**;未完成项显式保留,不以"应该没问题"替代验收。
 
 ## 8. 本项目特有条目
@@ -64,4 +65,5 @@
 - **范围门**:搭文档、调研、准备参考材料不等于授权实现;实现必须由任务包或一次性授权。当前处于 Stage 0(仅文档与参考快照),见 `docs/plan/AGENTS.md`。
 - **参考库边界**:`learn/` 中两个闭源工具的分析产物仅限学习;**不整体搬运其代码、不重新发布反编译产物**;`learn/sources/` 的 TopazStarlightUI 许可证未声明,只作行为参考不复制代码。
 - **产品不变量**(见 `docs/product/AGENTS.md`):注入失败必须回退原生运行;默认不写 Topaz 安装文件;监控数据不得伪造;结论必须可追溯。
-- 主工作流/评审 Skill 尚未选定;选定后在此登记安装路径与常备授权。
+- **主工作流**:`agent-dev-loop` **v3.0.0**(协议 `agent-dev-loop-v3`),安装于 `C:\Users\Administrator\.pi\agent\skills\workflow\agent-dev-loop`(Skill 根别名 `<AGENT_DEV_LOOP_ROOT>`)。常备授权:**仍为无**;worktree 创建等按任务包逐次授权。
+- **任务包与 handoff 边界**:任务治理产物在 `docs/tasks/<task-id>/`;每个身份的 ACK/checkpoint 在 `docs/handoff/<identity-id>.md`,由 `snapshot.mjs` 作为保留路径处理,**永不进候选**(见 `docs/handoff/AGENTS.md`)。

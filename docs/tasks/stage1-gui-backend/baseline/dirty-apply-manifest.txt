@@ -1,0 +1,68 @@
+# dirty-apply materialization manifest - 2026-10-20 (rev 2)
+#
+# !!! 适用范围(rev 2 修正, 依据 R01 F9) !!!
+#   本清单描述的是 **materialize 之后的 <CODING_ROOT>** 中的治理文件,
+#   **不描述 candidate-N 的字节**。候选身份只由 snapshot.json 的 manifest_sha256 决定。
+#   原因: A002 在 freeze 之后仍会更新 state.md / STATUS.md / 身份上下文,
+#         若把本文件当作候选字节的证明会得到假阴性/假阳性。
+#
+# 用途: 证明 dirty-apply 复制一致性,并作为"治理文件是否被写者越界改写"的对照表。
+#       判据是「与 A002 的当前写入是否一致」,而非「与候选是否一致」。
+#
+# 不入清单(都在 A003 的 write_scope 内,他有权增改):
+#   - Cargo.toml / Cargo.lock / rust-toolchain.toml / .gitignore
+#   - backend/  hook/  gui/  fixtures/
+#   - docs/tasks/stage1-gui-backend/coding/   (receipt 与 evidence)
+#   - docs/handoff/                           (v3 保留路径,永不进候选)
+#
+# 物化命令: git worktree add -b a003/master <PROJECT_ROOT>.worktree/A003/Master 6e85b9e
+#          然后复制下列文件;不产生任何提交。
+#
+# sha256  path
+26a55dfbda7e23d8f4d7cbac4c5341008d8b7f2036f75086a1b7ec84aa7ef5b5 *AGENTS.md
+66fe89b01f7acb3fa768f7f4e89d60ec0df7b69a0d367a275baa9a954ba6515a *CONTEXT.md
+9af42b7f102bd47bc8fe49b4ebdc43ef02574eeb2b199e546d0a6f9fee98cf2a *docs/START_HERE.md
+39c05e475cac57c6329c13a5cc25a3b2300f39dd7f117c4063c1d44bad662d3f *docs/STATUS.md
+0428c43b25b82912ed95bb014d800459b70a2b187b0a85fb9338b45e508fb18a *docs/architecture/AGENTS.md
+0bdaec7b1e8d406f141e9be4cb0f4e1d8f550bff493f0ec447b58cbbd0b75377 *docs/decisions/ADR-002-stage1-boundaries-and-evidence.md
+f2123f50004ebfff2ab984eccd7bfb2c7c01c5407ce91f5a35fd96f0d50649df *docs/decisions/ADR-003-finding-consumption-policy.md
+cc976ae7692857edb5243743015483318b19c6680f0ca471f7eea238781f78ac *docs/decisions/AGENTS.md
+08631eec406c0334a3d405e65290c655d98e8cd0e54f6a06b7dc46ee60129913 *docs/engineering/AGENTS.md
+947e40439862b24c5ff296c89601dc88c9dc87dbbf8bd1ef92673ca7eb2729e9 *docs/identity/A001.md
+95468735854793b290a145a241935b3a1748093264d289073a90d68788a38e51 *docs/identity/A002.md
+e5f25e32c263859abb45e3835d8b095a714d8a45e40cc8951593173a17739b14 *docs/identity/AGENTS.md
+fc389d212033424318495db37cc8e1f1ac25e8b0ef92c8bdade33ad986e9f987 *docs/index.md
+ea6f9fcfaa3b0d641afe600e8661b0e31c39e2b281f133410aa357df302914fd *docs/plan/plan-stage1-coordinator-bootstrap.md
+da6093198bc6eda3783172523ff6f0612dde2dc75efcff3684f77823c4072d4d *docs/plan/plan-stage1-gui-backend.md
+edcf0b0ec753cf43e80621723e9c64433e6a501d53bbdf820e9e14934069ee2b *docs/tasks/AGENTS.md
+6ad20748b25339725d6824504718e6636e4c83e7ccbde90666a641329037155d *docs/tasks/stage1-gui-backend/AGENTS.md
+1da6a9b1466cd998040f5863e43ef5dbd27694f8e748322875588bcaa2fca0be *docs/tasks/stage1-gui-backend/baseline/initial-diff.txt
+2124f0b2ef1ff11ad7504216971bb82a9e152e0dbe8def41f18538305dd506f8 *docs/tasks/stage1-gui-backend/baseline/initial-status.txt
+53d90ae2be457f62da2f68185148aa65362dc289ef6fd50c96b14915a050b9b6 *docs/tasks/stage1-gui-backend/coverage-ledger.md
+6b0f9404f53c7fb7c68d3c3b21db70834bb81c5a453017a1dbc443af22fcebbc *docs/tasks/stage1-gui-backend/dispatch/A003.md
+0bd28e9fdb29c918e0486a37b0ce2d0b4f5db0b671a679d682ab22517183aef9 *docs/tasks/stage1-gui-backend/packet-v1.md
+3c98a5eec408c088edb525ae222334d7cef819f994348727f5f40099cafc493b *docs/tasks/stage1-gui-backend/packet-v2.md
+0cc244e668ca7d563c9042e40ccad20744dbd6b882fae5762adaa9435bda9862 *docs/tasks/stage1-gui-backend/packet-v3.md
+38207e91fab134521ba578533b17cd910e34247e05c7cecd3763fe1135d9fe1c *docs/tasks/stage1-gui-backend/packet-v4.md
+a62fd381e2690378eceb903d508322886a41fc61c5d82076761b4a31c2bec308 *docs/tasks/stage1-gui-backend/packet-v5.md
+a357226bd6c9dd48f4c59d908c3e32d555658977ce9f476a0dc0d78665e8c2f9 *docs/tasks/stage1-gui-backend/packet-v6.md
+81b127ce9f26653b426697eea772acd744378f239b79cca719531bf9a2235266 *docs/tasks/stage1-gui-backend/review/R01/dispatch.md
+a3d747b2f28d24c6d23255b83a881cd72cea297ab99996e83b077c82847679f2 *docs/tasks/stage1-gui-backend/review/R01/evidence/A-AC3-partial-apply.txt
+ccef8bc8529c8a8da021a13a9aa283db4e6e80310e5e45490a1a01ef2991a818 *docs/tasks/stage1-gui-backend/review/R01/evidence/A-AC3-setattr-nth.txt
+2ee11c343ac9dd797068d122f95300de8ba84d0b53370af24a59fc651a0bfe18 *docs/tasks/stage1-gui-backend/review/R01/evidence/A-AC6-fixture-dump.txt
+bac9ac0a3ab42d0ca39b7a5e10cef02611e9d70f89e9ca411bdcb62c3d74986f *docs/tasks/stage1-gui-backend/review/R01/evidence/A-F4-zero-match-gate.txt
+cf19b6b3b732333a2106fff3cb0d93c14721428dbd3b13db0cef1f1f3921ce0e *docs/tasks/stage1-gui-backend/review/R01/evidence/A-e2e-mechanism.txt
+7a4c9c2207e273ee0fb3f0e376fd710454d8f05387ee8d006376d68bab58d12b *docs/tasks/stage1-gui-backend/review/R01/evidence/M1-install-guard-mutation.txt
+919ee0006cfd077b175b151c63efd28b7872ce01a6af954dbc50256b368a0e8e *docs/tasks/stage1-gui-backend/review/R01/evidence/M2-chunk-parser-mutation.txt
+2ad37c659232d028f36ed1d6eb4be7d259bae192d4ad28fdc883559639034145 *docs/tasks/stage1-gui-backend/review/R01/evidence/R01-gates.txt
+902772b69d651338647f337b58b941a744882a27405103dd9737bd9190da31c7 *docs/tasks/stage1-gui-backend/review/R01/evidence/ledger-slice.md
+eafb31cf1c3b840d2783224beabe0b6a4c04b87e7c34430c49dc659efef36d79 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/ac3_partial.py
+9ed4fafd96dfe6146364c30237423c7bf8eae83f6f1aa3452dabbafdfb91f90f *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/ac3_setattr_nth.py
+126763d98933209158c8c3853408e60c6791de9c22593a5b6f68171ede2316a1 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/ac6_dump.rs
+0b2561387cfb9587c249fa00a9fb9083a08dc18b2a59fab5e290187600058ac1 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/ac8_reach.rs
+a8f0faadfaf48fda31a867817b262537029b8fd4ce84e1726473cfdfa2dbf8cb *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/e2e.py
+c4cb11e428e561a5e665d05c559768078b6f4da0854a8a05af0f32dbcec32690 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/probe_ac10.rs
+5c06311add8833f967b65bb1071822e2e3f9f952de73b9f88e27265b87563e95 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/probe_install_case.rs
+e4e7f8e3e6f644d7a7ed64d65f9d965f1d6b0ed878c58440605a4d2fd890df58 *docs/tasks/stage1-gui-backend/review/R01/evidence/scripts/synthetic-target-models-slp25.py
+c4a38ec0afdee9d9204e6853d537b18b73be3013444965f05fdefbc1fa4b81fc *docs/tasks/stage1-gui-backend/review/R01/report.md
+18ff03ef48d23d05937d3724bc707275d68e709255da37b539e84e8d4bd9ac53 *docs/tasks/stage1-gui-backend/state.md

@@ -14,10 +14,12 @@ Owner: 项目所有者(暂代)。只登记**已存在**的入口;每项标注状
 | [decisions/](decisions/AGENTS.md) | 决策索引、开放决策清单与 ADR 规则 | Current |
 | [research/](research/AGENTS.md) | 来源登记(锁定基线、许可证、获取与验证证据) | Current |
 | [research/references/](research/references/AGENTS.md) | 外部参考简报与证据附录(报告实例) | Current |
-| [tasks/](tasks/AGENTS.md) | 任务包位置/命名/版本与绑定规则 | Current(无实例) |
+| [tasks/](tasks/AGENTS.md) | 任务包位置/命名/版本与绑定规则 | Current |
+| [tasks/stage1-gui-backend/](tasks/stage1-gui-backend/AGENTS.md) | Stage 1 任务包:`packet.md`(活,rev 12)/ `packet-v12.md`(40 verifiable + 6 deferred)、state、coverage ledger、`coding/dispatch-2.md`–`dispatch-7.md`、`review/R01`–`R05`(FAIL)、`R06` 待 `receipt-v6` | Current |
 | [runbooks/](runbooks/AGENTS.md) | 操作步骤、恢复入口与事故记录规则 | Current(无实例) |
 | [release/](release/AGENTS.md) | 发布记录结构与发布纪律 | Current(无版本) |
-| [identity/](identity/AGENTS.md) | 身份登记、单写者与身份上下文规则 | Current(待指派) |
+| [identity/](identity/AGENTS.md) | 身份登记、单写者与身份上下文规则 | Current |
+| [handoff/](handoff/AGENTS.md) | 身份 ACK/checkpoint（`snapshot.mjs` 保留路径，永不进候选） | Current |
 
 ## 维护规则
 

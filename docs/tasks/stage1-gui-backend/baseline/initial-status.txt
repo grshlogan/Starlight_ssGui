@@ -1,0 +1,14 @@
+# Baseline inventory (sanitized) — 2026-10-18, cwd <PROJECT_ROOT>
+# command: git status --porcelain=v1
+# exit: 0
+ M docs/decisions/AGENTS.md
+ M docs/identity/AGENTS.md
+?? CONTEXT.md
+?? docs/decisions/ADR-002-stage1-boundaries-and-evidence.md
+?? docs/identity/A001.md
+?? docs/plan/plan-stage1-coordinator-bootstrap.md
+?? docs/plan/plan-stage1-gui-backend.md
+?? docs/tasks/stage1-gui-backend/
+# --- HEAD ---
+6e85b9e4aba16cc52f9fcc74dedf0170327382e2
+6e85b9e chore: initialize repository

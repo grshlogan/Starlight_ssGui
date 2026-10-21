@@ -12,4 +12,8 @@
 
 ## 当前状态
 
-尚无任务包(Stage 0 由所有者直接授权,不适用任务包)。
+| 任务 | 当前版本 | 拓扑 | 模块 | Master Coding | Review 家族 | 验收人 | 状态 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [`stage1-gui-backend`](stage1-gui-backend/AGENTS.md) | `packet-v12`(`sha256:8d0a1f2c…`,`packet_rev: 12`) | `stream` | `backend`、`GUI` | `A003[PiDeck]Master Coding` | `stage1-gui-backend`(`R01`–`R05` 均 FAIL;`R06` 待 `receipt-v6`) | 项目所有者 | `FIXING` |
+
+Stage 0 由所有者直接授权,不适用任务包。`stage1-gui-backend` 是首个正式任务包。

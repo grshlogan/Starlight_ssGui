@@ -1,0 +1,23 @@
+prev tests: 11   now tests: 12
+
+## 消失的测试
+  - parser_reaches_contract_matched_for_unknown_version
+  - recognizes_known_and_contract_matched_dialects
+
+## 新增的测试
+  + non_reserved_override_merges_into_environment
+  + parser_recognizes_all_dialects_through_log_parser
+  + target_module_override_is_reserved
+
+## 消失测试的解释状态
+  [EXPLAINED] parser_reaches_contract_matched_for_unknown_version
+  [EXPLAINED] recognizes_known_and_contract_matched_dialects
+
+## receipt 提到的测试名 vs evidence
+  [OK] non_reserved_override_merges_into_environment  源码存在=True  evidence含ok行=True
+  [OK] parser_recognizes_all_dialects_through_log_parser  源码存在=True  evidence含ok行=True
+  [OK] pythonpath_override_is_reserved  源码存在=True  evidence含ok行=True
+  [OK] reserved_override_cannot_disable_injection  源码存在=True  evidence含ok行=True
+  [OK] target_module_override_is_reserved  源码存在=True  evidence含ok行=True
+
+RESULT: PASS  (false claims=0, unexplained removals=0)

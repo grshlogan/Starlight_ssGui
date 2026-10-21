@@ -5,13 +5,15 @@
 | ID | 主题 | 状态 | 记录 |
 | --- | --- | --- | --- |
 | D001 | 技术栈:Rust + pocketjs v0.14.0 | Accepted(2026-10-17) | [ADR-001-rust-pocketjs-stack.md](ADR-001-rust-pocketjs-stack.md) |
+| D002 | Stage 1 闭环顺序、模块 seam 与证据门 | Accepted(当前会话确认;实测待完成) | [ADR-002-stage1-boundaries-and-evidence.md](ADR-002-stage1-boundaries-and-evidence.md) |
+| D003 | Review finding 的消费策略(P3 默认不修、成本判据、少部件优先) | Accepted(2026-10-20) | [ADR-003-finding-consumption-policy.md](ADR-003-finding-consumption-policy.md) |
 
 ## 开放决策(唯一未决清单)
 
-- **注入机制**:PYTHONPATH + sitecustomize vs `.pth` 引导器 + SHA256(依赖:Stage 1 实测;倾向 PYTHONPATH 以守住"不改 Topaz 安装文件"不变量)。
-- **日志源与方言策略**:主日志(tzlog)为主、neuroserver stdout 为辅;双方言(1.7.0 / 1.7.1+)的实现方式(依赖:Stage 1 日志夹具)。
 - **pocketjs 宿主能力路线**:直接使用现有宿主 API vs 编写 Rust 扩展(依赖:Stage 1 spike 结论)。
 - **发布与许可策略**:项目自身许可证选择;`learn/` 中许可证未声明快照对再发布/分发的影响(依赖:所有者决策,Stage 2 前)。
+
+D002 已确认注入优先顺序、注入和日志的首选方向、GUI/backend seam 与 Stage 1 证据门；这些方向仍须通过阶段实测，实测失败时按 ADR 记录回到备选方案。
 
 ## 规则
 

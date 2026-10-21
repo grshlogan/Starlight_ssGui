@@ -1,0 +1,6 @@
+2026-10-19 10-00-00.000 Thread: 1 Info Setup logging for Topaz Video 1.7.0
+2026-10-19 10-00-01.000 Thread: 1 Info VAE Encode
+2026-10-19 10-00-02.000 Thread: 1 Info VAE Encode chunk 1/3 progress 33%
+2026-10-19 10-00-03.000 Thread: 1 Info DiT Upscale chunk 2/3 progress 66%
+2026-10-19 10-00-04.000 Thread: 1 Info VAE Decode
+2026-10-19 10-00-05.000 Thread: 1 Info total processing time: 5.0s

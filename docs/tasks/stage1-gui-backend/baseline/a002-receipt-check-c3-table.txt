@@ -1,0 +1,24 @@
+prev tests: 12   now tests: 12
+
+## 消失的测试
+  (无)
+
+## 新增的测试
+  (无)
+
+## 消失测试的解释状态
+
+## receipt 提到的测试名 vs evidence
+  [OK] non_reserved_override_merges_into_environment  源码存在=True  evidence含ok行=True
+  [OK] parser_recognizes_all_dialects_through_log_parser  源码存在=True  evidence含ok行=True
+  [OK] pythonpath_override_is_reserved  源码存在=True  evidence含ok行=True
+  [OK] reserved_override_cannot_disable_injection  源码存在=True  evidence含ok行=True
+  [OK] target_module_override_is_reserved  源码存在=True  evidence含ok行=True
+
+## AC 覆盖表
+  [MISSING] 整节缺失
+
+RESULT: FAIL  (false claims=0, unexplained removals=0, ac-table failures=1)
+
+AC 覆盖表失败项:
+  - receipt 内无 "## AC 覆盖表" 节(本次要求强制)

@@ -1,0 +1,4 @@
+# Checkpoint and ACK files are per-identity, never tracked, never candidate bytes.
+*
+!.gitignore
+!AGENTS.md

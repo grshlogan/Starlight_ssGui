@@ -61,11 +61,25 @@
 
 ## 验证入口
 
-| 门 | cwd | 实际命令 | 工具链/前置 | 范围/预期退出码 |
-| --- | --- | --- | --- | --- |
-| 未配置 | — | 未配置;不执行发明的示例命令 | 无(Stage 0 无工具链) | not run |
+权威定义在任务包的 `verify_commands`(当前:`docs/tasks/stage1-gui-backend/packet-v5.md`)。下表是映射摘要,不另立第二套。
 
-测试、构建、静态检查、集成与产品验收分别记录;无法运行时写明缺失条件,不声称成功。
+| 门 | cwd | 实际命令 | 工具链/前置 | 预期退出码 |
+| --- | --- | --- | --- | --- |
+| `G-FMT` | `<CODING_ROOT>` | `cargo fmt --all --check` | rustfmt 1.9.0-stable | 0 |
+| `G-CLIPPY` | `<CODING_ROOT>` | `cargo clippy --workspace --all-targets -- -D warnings` | clippy 0.1.95 | 0 |
+| `G-TEST-RS` | `<CODING_ROOT>` | `cargo test --workspace` | cargo 1.95.0 | 0 |
+| `G-BUILD` | `<CODING_ROOT>` | `cargo build --workspace` | cargo 1.95.0 | 0 |
+| `G-PY-UNIT` | `<CODING_ROOT>` | `python -m unittest discover -s hook/tests -t . -v` | Python 3.11.9,stdlib only(无 pytest) | 0 |
+| `G-FAILSAFE` | `<CODING_ROOT>` | `python -m unittest discover -s hook/tests -t . -v -k failsafe` | 同上 | 0 |
+| `G-PY-COMPILE` | `<CODING_ROOT>` | `python -m compileall -q hook` | 同上 | 0 |
+| `G-GUI-TEST` | `<CODING_ROOT>/gui` | `node --test` | Node v24.22.0(**无 bun**;禁 enum/namespace,跨文件导入写 `.ts`) | 0 |
+| `G-HOST-CAPABILITY` | `<CODING_ROOT>` | `python -m unittest hook.tests.test_host_capability -v` | 需 `coding/evidence/host-capability.md` 为 `status: BOUND` | 0(**缺证据即为 1**) |
+| `M-TOPAZ-INJECT` | — | 真实 SLP 短导出,注入前/后对照审计 JSONL | 真实 Topaz + 所有者授权 | 手工 |
+| `M-TOPAZ-LOG` | — | 一次真实 SLP 渲染产出 `tzlog` 并解析 | 同上 | 手工 |
+
+**门语义规则**:`required: true` 的门不得在缺失证据时静默 skip——skip 必须表现为非零退出码。`G-HOST-CAPABILITY` 即按此实现。
+
+测试、构建、静态检查、集成与产品验收分开记录;无法运行时写明缺失条件,不声称成功。
 
 ## 已知陷阱(来源见括号)
 

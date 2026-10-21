@@ -31,8 +31,8 @@ backend  : Rust core;环境组装、注入装配、Topaz 启动、单实例锁�
 
 | 模块 ID | 边界/职责 | Master Coding | 当前任务/Block | Review 家族 | 验收人 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- |
-| `GUI` | pocketjs 界面与交互状态；通过 backend 获取结构化参数、进度和日志 | 未指派 | 无 | 待定 | 所有者 | `planned` |
-| `backend` | Rust core：环境组装、Topaz 生命周期、hook 注入、审计、日志监控、参数模型、预设与持久化 | 未指派 | 无 | 待定 | 所有者 | `planned` |
+| `GUI` | pocketjs 界面与交互状态；通过 backend 获取结构化参数、进度和日志 | `A003[PiDeck]Master Coding`(`stream` 拓扑下兼任) | `stage1-gui-backend` / B04(已实现,待 Review) | `stage1-gui-backend` | 所有者 | `REVIEW_READY` |
+| `backend` | Rust core：环境组装、Topaz 生命周期、hook 注入、审计、日志监控、参数模型、预设与持久化 | `A003[PiDeck]Master Coding` | `stage1-gui-backend` / B02、B03(已实现),B01(延后) | `stage1-gui-backend` | 所有者 | `REVIEW_READY` |
 
 - 每个激活模块只有一个 Master Coding;身份、模块范围与写范围须同时登记于 [身份登记](../identity/AGENTS.md) 与任务包。
 - Master 负责实现、Block 拆分、集成与移交;**不能**替代独立 Review 与验收人。

@@ -1,0 +1,67 @@
+# A002 → <CODING_ROOT> 文档桥记录
+# 用途:治理文档不进候选(packet-v8 起),故本清单只记录"我往 Coding 工作区放过哪些治理文档"。
+# 不描述候选字节;候选身份只由 snapshot.json 的 manifest_sha256 决定。
+# 排除:A003 自己的 docs/handoff/A003.md、coding/receipt-*.md、coding/evidence/**。
+
+9623186ecbd38956b3827cf18dcc30c0a2a552c80b4e8a716fee3f0dc414d237  README.md
+a1e1a0a123977fec8ba81a8c2be6b57033a4ccece3bbf837aa924ddeeeb09618  docs/START_HERE.md
+f4750f4e7d3c974873b06d4315f19746a4b7a554017d5063a20c14776f4deb4e  docs/STATUS.md
+8c02c254f6e248b726a83934bb693963cc97e8db04307065d3dd224cc3a93cfc  docs/decisions/ADR-001-rust-pocketjs-stack.md
+f335eb56eaf5da5e7e6ef200a9914d59ed433ea502f4b06c9819cc9d5a61be3e  docs/design/AGENTS.md
+f0f9beaebb57d2bd3d6bf9943d3d741c7d28575eaaa23b577cad4d153a991261  docs/handoff/A002.md
+e949b42df2f0286d2ee9d168d89c69e55621e44f92e238da87262fb7afd9b63f  docs/identity/A002.md
+0a789d6d791b0810bf6a670d80c611b297d60df61f2380ffbedc2469deca19df  docs/index.md
+38b88d8eb979b325f93255a281897978380a3e24fe91b104ad5fcb0a04961e03  docs/plan/AGENTS.md
+120450fcfe3be0a73942a046ec01ebe200847d057f83be8db71aff20e7291dd6  docs/product/AGENTS.md
+0dee9ec872bef093d5ed8c96913ce8434434e94253408b9e8e6e4c0d5bd9903a  docs/release/AGENTS.md
+9d6de311aca1e1fd020050f087cd13a19e467bab7a215d2a26d3b0ff492bcb3e  docs/research/AGENTS.md
+3216066dcdcd6e1d673ef2151b65d20f4094c4b42ddde102cbc5c0517edfddc1  docs/research/references/AGENTS.md
+88bd7d2f1053e9dbcea3691749991e09ccc0ab3328bedfd5fbef9a241cd76c4e  docs/runbooks/AGENTS.md
+662686ed3f495dd9e63811fa1e99b2195ec59d30a45117d4b154f28fd68fab8a  docs/tasks/AGENTS.md
+c5824e9fdec4725fd4ab18897e03cac21bdda358a9d8322936c25b0365679a32  docs/tasks/stage1-gui-backend/AGENTS.md
+84c19d6d3beba81106d483706d5a3bde4b9d25d35e21ae980f82505b3a29f68f  docs/tasks/stage1-gui-backend/coding/dispatch-3.md
+9aa55158c5bb30e4a26999e6f4bc8b5d53c2a676d80cf6f242da9bb480285a0b  docs/tasks/stage1-gui-backend/coverage-ledger.md
+11cdd72a6cec9038035694bb0c83398553c7ff57109b594f8faec699762b4f59  docs/tasks/stage1-gui-backend/packet-v7.md
+d41a70d2abccb3a49167bd1f57f2f405bd8e6dcaf1df89e514daec7a412b2c23  docs/tasks/stage1-gui-backend/packet-v8.md
+e966bc8006f0b3bc53a7a038505ea8b1963f6d13cecf688b30e138b3eb2de1c0  docs/tasks/stage1-gui-backend/review/R02/dispatch.md
+409509c433b34ff3a12970c055c8f51d817739e593077adb4240cc07f8884e44  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-F1-ac8-known-dialect.txt
+f32e6efd7d550f1389ff637702cbcfdb0139419a2dbc88368e52b76a94011fc8  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-ac6-gui.txt
+40c0f69981d7ca31ba3b4715c0ff65d0c506d213506e6a0c3893e07f6b403059  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-f6-f7-byte-check.txt
+5f5f27acf1b85580c7ced7df81625400d1d8a2ccb502791876ebd21bc4aeb2b9  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-gates.txt
+91ff72a595bd628cbe38c73dfb9055dc503a1c2248ad8963dc0e460a71315765  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-governance-sync-check.txt
+4b5aa7f1f34811c6759ac65ff6e33444376d62261572a4db55d095f7964370e8  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-host-gate-tristate.txt
+a18ce2cac00f6605d53e705d1ffaf0fed8aa8ca52e5346dc4f845cbb59a2fcbb  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-incremental-diff.txt
+810901ab6d4359a89f192d08f7d1218f55abe5d3a55290aa6044fb573eca1e65  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-mutations.txt
+998070b053734fa1020057c1b4c126c11751152e38d51b66bcf4b4a19e9acfa4  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-probes-ac3-double-fault.txt
+34418bcaab02ef043c9a7f4d548f69fd1c649733d81889ccece517a8060dead0  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-probes-ac3.txt
+e2e11e13659af83a1386990cbf66ba732a01575bfb9a7d0d96215e38564fd5da  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-probes-residual-and-e2e.txt
+6f1d009e219f1f902c43164b980ffa4448345593a51077a2dafc83f159484510  docs/tasks/stage1-gui-backend/review/R02/evidence/R02-probes.txt
+eafb31cf1c3b840d2783224beabe0b6a4c04b87e7c34430c49dc659efef36d79  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac3_partial.py
+5bd093b0fa6145ef909aa978042dd3dff36bbb48bc92c4b073caaf7e68a3703f  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac3_rollback_failure.py
+9ed4fafd96dfe6146364c30237423c7bf8eae83f6f1aa3452dabbafdfb91f90f  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac3_setattr_nth.py
+12d651f5c250fc41ab5bb06de93e05ee02037d75288c97fc64185239e7621257  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac6_dump.rs
+ad804fc240e408e99b9ef77ed00c1cc34ea00d6d5070fa3cb2203550e50fa323  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac8_known_versions.rs
+0b2561387cfb9587c249fa00a9fb9083a08dc18b2a59fab5e290187600058ac1  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/ac8_reach.rs
+0cd393cf0028471bbeec82af9309e361f043e1c19521fe45936950ddc304457b  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/fn_bodies.py
+453517a784edbe1b17db1c4f1c9e06e3d9616f56273ee30d911766d08c576edb  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/probe_ac10_reserved.rs
+3fe8302148f406b1b6aa1eae0dba369d027104621b7ce73f8ba52127eeff17a1  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/probe_residual_override.rs
+14874bc05573bad501b5d8265ee4e9462c18c4cfbf9ae94341c8013f69dca60c  docs/tasks/stage1-gui-backend/review/R02/evidence/scripts/residual_reserved_probe.py
+887a47e31bf9ea83545724ee98e4d010026cb6079e8b8e33290223651a7195b1  docs/tasks/stage1-gui-backend/review/R02/report.md
+6483fbd5682420a6e8179914bf8dd014efc1d4f6652ca2aa1084b8969302c8af  docs/tasks/stage1-gui-backend/state.md
+a4de8d460e859ee49caa3cb0f7b37a35b7acfbeba72be832c04a74597e16e35e *docs/tasks/stage1-gui-backend/review/R06/dispatch.md
+15b0869579d5ca8ce69baf70bdd677f45d7cd89843d4f7f2901111b90f1e62b6 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-adv-probe-python.txt
+1f204d8014e68543e6c9dc29d937d11c1c52ad5c5469296db0f8523b617a3058 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-adv-probe-rust.txt
+f594a953f73d0730fe3f4bdb835eb9d08817e35fd1752a77495c8e99e313323c *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-adv-probe-rust2.txt
+607389aba929a63412b27c6563686c9d69eba2a6e4c6a09b52dae18d37a4f087 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-cumulative-paths-clean.txt
+0b7dd55a577a0e8cf9526acc6f13a9b8cc81c57e491e2ee4f96c0d9dfd463149 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-cumulative-paths.txt
+b59b0c0f40395055b0a490042616a8deae5656f3fa4876b5181485b2fc62265a *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-diff-c5-c6.txt
+9aeefff31e57b425e59a7bf49378532e68de033fe700390287e9439ac48047b1 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-gates.txt
+db95cf7f28ed990f1c505c278b80e256c88b4df8f8f5516cf9e4e97e55587d39 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-manual-procedures.txt
+445d558700b28faf4143832c2f87ca964788bb9495b5063a88918a0254587bfb *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-mutations.json
+0ec5407f468aba51c1ca1d5e8fd9c835596e455baa6a6c5b0ca720e6451346c3 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-mutations.txt
+5c5b0389e53bf7da3f0a5d1eab2107dec8bd076bfc1a48d9117f0898b5b0f250 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-ocr-comments-digest.txt
+1063e51ad636c35d65ec48c92614d0f8693b52d3d9b713c387e2d1f197ab37c1 *docs/tasks/stage1-gui-backend/review/R06/evidence/R06-ocr-comments.txt
+75332ddb1fadbb9d7e1668e6fa0ce7170459dd34c2ee56031370d4f74070da81 *docs/tasks/stage1-gui-backend/review/R06/evidence/ocr-progress.log
+e4a62cd361dcbaf6bb96d3df29d8c2756222928210ee5bcc4e769d83cf6f1588 *docs/tasks/stage1-gui-backend/review/R06/evidence/ocr-run.json
+44cc8e0abc231a28b08343c0d924bcb66d977922889c7bff1d63e6acc95cca76 *docs/tasks/stage1-gui-backend/review/R06/evidence/ocr.json
+3c45563527df1b687b15e50ac7d4f782f71ded36fafbb108c87a9a0c6fdb064c *docs/tasks/stage1-gui-backend/review/R06/report.md
